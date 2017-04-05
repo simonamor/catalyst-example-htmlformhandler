@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML::FormHandler test</title>
+<style type="text/css">
+input { margin-bottom: 5px; }
+ul { padding-left: 0px; }
+ul li { list-style-type: none; display: inline; padding: 10px; margin: 6px; }
+ul li a { padding: 10px; border: 1px solid #999999; background: #eeeeee; }
+label { display: inline-block; width: 5em; }
+</style>
+</head>
+<body>
+<p>Enter your name, postcode and email address</p>
+
+<form method="POST" action="/">
+<label for="name">Name</label> <input type="text" id="name" name="name" value="" required><br>
+<label for="postcode">Postcode</label> <input type="text" id="postcode" name="postcode" value="" required><br>
+<label for="email">Email</label> <input type="email" id="email" name="email" value="" required><br>
+<input type="submit" value="Submit">
+</form>
+
+<hr>
+
+[% form.render %]
+
+<hr>
+
+<ul>
+<li><a href="/">Index</a></li>
+</ul>
+
+</body>
+</html>
