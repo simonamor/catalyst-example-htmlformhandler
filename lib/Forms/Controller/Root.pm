@@ -46,7 +46,7 @@ sub index :Path :Args(0) {
             },
             postcode => {
                 do_wrapper => 0,
-                type => "Text",
+                type => "+Forms::Form::Field::Postcode",
                 required => 1,
                 messages => { required => 'You must enter a postcode' },
                 tags => {
