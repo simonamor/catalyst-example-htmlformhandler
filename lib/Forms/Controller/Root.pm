@@ -74,6 +74,9 @@ sub index :Path :Args(0) {
     $form->process( params => $p, );
     $c->stash( form => $form );
 
+    use Data::Dumper;
+    $c->log->debug( Dumper($form->values));
+
     $c->stash( template => "index.html" );
 }
 
