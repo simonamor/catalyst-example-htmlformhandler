@@ -52,6 +52,7 @@ sub index :Path :Args(0) {
                 tags => {
                     after_element => '<br>'
                 },
+                fif_from_value => 1,
             },
             email => {
                 do_wrapper => 0,
@@ -60,6 +61,7 @@ sub index :Path :Args(0) {
                 tags => {
                     after_element => '<br>'
                 },
+                fif_from_value => 1,
             },
             submit => {
                 do_wrapper => 0,
