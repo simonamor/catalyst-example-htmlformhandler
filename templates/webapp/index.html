@@ -16,26 +16,21 @@ span.error_message { display: block; padding:5px; background-color: #dd0000; col
 <body>
 <p>Enter your name, postcode and email address</p>
 
-<p><b>Old form (handcrafted).</b></p>
-
-<form method="POST" action="/">
-<label for="oldname">Name</label> <input type="text" id="oldname" name="name" value="" required><br>
-<label for="oldpostcode">Postcode</label> <input type="text" id="oldpostcode" name="postcode" value="" required><br>
-<label for="oldemail">Email</label> <input type="email" id="oldemail" name="email" value=""><br>
-<input type="submit" value="Submit">
-</form>
-
-<hr>
-
-<p><b>New form (HTML::FormHandler).</b></p>
-
 [% form.render %]
 
-<hr>
+<h1>Input form fields</h1>
 
-<ul>
-<li><a href="/">Index</a></li>
-</ul>
+[%- FOREACH k IN params.keys.sort;
+        k _ ": " _ params.$k _ "<br>";
+    END;
+%]
 
+<h1>Output form fields</h1>
+
+[%- fv = form.values;
+    FOREACH k IN fv.keys.sort;
+        k _ ": " _ fv.$k _ "<br>";
+    END;
+%]
 </body>
 </html>
